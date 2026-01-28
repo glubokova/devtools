@@ -1,5 +1,8 @@
 plugins {
     id 'java'
+    id 'application'
+    id 'checkstyle'
+    id 'jacoco'
 }
 
 group = 'org.example'
@@ -14,6 +17,51 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }
 
+checkstyle {
+    toolVersion = '10.12.4'
+    maxErrors = 0
+    maxWarnings = 999
+    configFile = file("${rootDir}/config/checkstyle/checkstyle.xml")
+}
+
+jacoco {
+    toolVersion = '0.8.14'
+}
+
 test {
     useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required = false
+        csv.required = false
+        html.required = true
+        html.outputLocation = layout.buildDirectory.dir('reports/jacoco/test/html')
+    }
+}
+
+jacocoTestCoverageVerification {
+    dependsOn jacocoTestReport
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.80
+            }
+        }
+    }
+}
+
+tasks.named("checkstyleMain") {
+    group = "verification"
+}
+
+tasks.named("checkstyleTest") {
+    group = "verification"
+}
+
+check {
+    dependsOn jacocoTestCoverageVerification
 }
