@@ -1,3 +1,53 @@
+## DVT-7
+## Кодстайл-гайд проекта devtools
+
+Проект следует правилам Google Java Style Guide с адаптацией.
+Автоматическая проверка: ./gradlew checkstyleMain
+
+### 1. Именование методов: camelCase
+
+До:    public void add_student(Student s) { }
+После: public void addStudent(Student student) { }
+
+Почему: Java Convention требует camelCase для методов.
+Источник: https://google.github.io/styleguide/javaguide.html#s5.3-camel-case
+
+### 2. Пробелы после if/for/while
+
+До:    if(condition) {
+После: if (condition) {
+
+Почему: улучшает читаемость, отделяет ключевое слово от выражения.
+Источник: Oracle Code Conventions — Whitespace
+
+### 3. Длина строки: максимум 120 символов
+
+До:    public List getStudentsFromSpecificCityWithVeryLongName...
+После: public List getStudentsByCity(String city) {
+
+Почему: длинные строки затрудняют чтение в редакторе и при code review.
+Источник: https://google.github.io/styleguide/javaguide.html#s4.4-column-limit
+
+### 4. Порядок импортов
+
+До:    import java.util.List; import java.util.ArrayList; import java.io.File;
+После: import java.io.File; import java.util.ArrayList; import java.util.List;
+
+Почему: алфавитный порядок упрощает поиск импортов.
+Источник: IntelliJ IDEA → Code → Optimize Imports
+
+### 5. Фигурные скобки для if
+
+До:    if (condition) doSomething();
+После: if (condition) { doSomething(); }
+
+Почему: скобки обязательны даже для однострочных блоков.
+Источник: https://google.github.io/styleguide/javaguide.html#s4.1.1-braces-always-used
+
+
+## DVT-3
+### Правило веток: feature/DVT-X с примерами master и feature/DVT-3
+### 1 - Основная ветка (master)
 DVT-6
 ## Сценарий ручной проверки DVT-6
 
@@ -33,7 +83,7 @@ DVT-3
    считается «основной» — здесь хранится стабильная версия кода;
    изменения вливаются только через merge-реквесты (pull requests) после ревью;
    не допускается прямой коммит — все доработки ведутся в feature-ветках.
-2 - Feature-ветки (feature/DVT-X)
+### 2 - Feature-ветки (feature/DVT-X)
    создаются для реализации отдельных задач (например, feature/DVT-3 для задачи с ID DVT-3);
    название ветки строго по шаблону: feature/DVT-<номер_задачи> (например, feature/DVT-3, feature/DVT-10);
    ветка создаётся от master:
@@ -46,12 +96,12 @@ DVT-3
 
 
 
-DVT-2 
+## DVT-2 
 Проект DevTools - Система отслеживания прогресса менти
 Проект для отслеживания прогресса студентов в спринтах с
 использованием современных инструментов разработки Java.
 
-Quick Start
+## Quick Start
 Запуск через Gradle Tool Window (IntelliJ IDEA)
 Откройте Gradle Tool Window (правая панель IDEA).
 
