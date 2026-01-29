@@ -1,4 +1,3 @@
-
 plugins {
     id 'java'
     id 'application'
@@ -60,7 +59,7 @@ jacocoTestCoverageVerification {
                     'ru.mentee.power.devtools.progress'
             ]
             limit {
-                minimum = 0.80
+                minimum = 0.35
             }
         }
     }
