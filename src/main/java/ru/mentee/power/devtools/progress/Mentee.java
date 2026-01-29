@@ -9,7 +9,7 @@ public record Mentee(
 ) {
 
     public Mentee {
-        if (completedLessons< 0 || totalLessons <= 0 || completedLessons > totalLessons) {
+        if (completedLessons < 0 || totalLessons <= 0 || completedLessons > totalLessons) {
             throw new IllegalArgumentException("Некорректные значения прогресса");
         }
     }

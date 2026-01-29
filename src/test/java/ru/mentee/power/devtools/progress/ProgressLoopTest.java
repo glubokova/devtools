@@ -1,8 +1,8 @@
-
 package ru.mentee.power.devtools.progress;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 
@@ -11,7 +11,7 @@ class ProgressLoopTest {
 
     @Test
     @DisplayName("Должен корректно вычислить суммарный прогресс когда передан массив mentee")
-    void shouldProgress_whenMultipleMentees() {
+    void shouldProgressWhenMultipleMentees() {
 
         ProgressTracker tracker = new ProgressTracker();
         Mentee[] mentees = {
@@ -29,7 +29,7 @@ class ProgressLoopTest {
 
     @Test
     @DisplayName("Должен корректно обработать массив когда все mentee завершили курс")
-    void should_whenAllMenteesCompleted() {
+    void shouldWhenAllMenteesCompleted() {
 
         ProgressTracker tracker = new ProgressTracker();
         Mentee[] mentees = {
