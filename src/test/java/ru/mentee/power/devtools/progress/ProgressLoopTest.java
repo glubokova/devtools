@@ -11,7 +11,7 @@ class ProgressLoopTest {
 
     @Test
     @DisplayName("Должен корректно вычислить суммарный прогресс когда передан массив mentee")
-    void shouldProgress_whenMultipleMentees() {
+    void shouldProgresswhenMultipleMentees() {
 
         ProgressTracker tracker = new ProgressTracker();
         Mentee[] mentees = {
@@ -29,7 +29,7 @@ class ProgressLoopTest {
 
     @Test
     @DisplayName("Должен корректно обработать массив когда все mentee завершили курс")
-    void should_whenAllMenteesCompleted() {
+    void shouldwhenAllMenteesCompleted() {
 
         ProgressTracker tracker = new ProgressTracker();
         Mentee[] mentees = {
