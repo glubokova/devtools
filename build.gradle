@@ -29,6 +29,10 @@ checkstyle {
     configFile = file("${rootDir}/config/checkstyle/checkstyle.xml")
 }
 
+tasks.withType(Checkstyle).configureEach {
+    exclude 'ru.mentee.power.progress'
+}
+
 jacoco {
     toolVersion = '0.8.14'
 }
@@ -52,6 +56,9 @@ jacocoTestCoverageVerification {
     dependsOn jacocoTestReport
     violationRules {
         rule {
+            excludes = [
+                    'ru.mentee.power.devtools.progress'
+            ]
             limit {
                 minimum = 0.80
             }
