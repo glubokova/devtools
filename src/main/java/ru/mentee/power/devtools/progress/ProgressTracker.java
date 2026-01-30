@@ -2,20 +2,18 @@ package ru.mentee.power.devtools.progress;
 
 public class ProgressTracker {
     public String calculateTotalProgress(Mentee[] mentees) {
-
         if (mentees == null || mentees.length == 0) {
             return null;
         }
 
         int totalCompleted = 0;
         int totalTotal = 0;
-        int index = 0;
 
-        while (index < mentees.length) {
-            Mentee currentMentee = mentees[index];
-            totalCompleted = totalCompleted + mentees[index].completedLessons();
-            totalTotal += mentees[index].totalLessons();
-            index++;
+        for (Mentee mentee : mentees) {
+            if (mentee!= null) {
+                totalCompleted +=mentee.completedLessons();
+                totalTotal += mentee.totalLessons();
+            }
         }
 
         int totalRemaining = totalTotal - totalCompleted;
@@ -38,5 +36,4 @@ public class ProgressTracker {
         String progress = tracker.calculateTotalProgress(mentees);
         System.out.println(progress);
     }
-
 }

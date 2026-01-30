@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StudentList {
-    private List<Student> studentList;
+    private final List<Student> studentList;
 
     public StudentList() {
         studentList = new ArrayList<>();
@@ -17,6 +17,11 @@ public class StudentList {
     }
 
     public List<Student> getStudentByCity(String city) {
-        return studentList.stream().filter(s -> s.city().equals(city)).toList();
+        if (city == null) {
+            return List.of();
+        }
+        return studentList.stream()
+                .filter(s -> s.city().equals(city)).
+                toList();
     }
 }
