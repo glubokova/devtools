@@ -1,4 +1,5 @@
 ![CI](https://github.com/glubokova/devtools/actions/workflows/ci.yml/badge.svg)
+
 # DVT-9
 
 ## Результаты само-ревью DVT-9
