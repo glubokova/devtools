@@ -1,3 +1,33 @@
+## DVT-8
+**Создайте feature-ветку:**
+- В терминале:
+
+  ```bash
+  git checkout -b feature/DVT-9-ci
+  ```
+
+2. **Внесите изменение** (например, добавьте комментарий в `README.md`):
+
+   ```bash
+   echo "# CI-пайплайн настроен" >> README.md
+   git add README.md
+   git commit -m "Update README with CI info"
+   git push -u origin feature/DVT-9-ci
+     ```
+
+3. **Создайте Pull Request:**
+   - Откройте GitHub → ваш репозиторий → вкладка **Pull requests** → **New pull request**.
+   - Base: `master`, Compare: `feature/DVT-9-ci`.
+   - Кликните **Create pull request**, введите название и описание, создайте PR.
+
+4. **Проверьте статус-чеки:**
+   - Внизу страницы PR появится секция **Checks** (или **Some checks haven't completed yet**).
+   - Подождите, пока GitHub Actions завершит выполнение (обычно 1–3 минуты).
+   - Если все проверки прошли, увидите зелёные галочки: `✅ build / build-and-test`.
+   - Если проверки упали, увидите красные крестики: `❌ build / build-and-test` — кликните Details, чтобы посмотреть логи.
+
+**Checkpoint 5 (PR-проверки работают):** в pull request отображается секция Checks с результатами CI (зелёный статус, если код корректный).
+
 ## DVT-7
 ## Кодстайл-гайд проекта devtools
 
