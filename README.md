@@ -28,7 +28,20 @@ Checkstyle и тесты на каждый коммит
 Ветки: feature/DVT-X — рабочие, master — основная
 Pull Request обязателен для слияния в master
 
+
+# DVT-13:  Пишем тесты: AssertJ и сильные ассерты
+
+
 # DVT-12: Личный глоссарий терминов Dev Tools
+
+## Как называются тесты в этом проекте
+
+Тесты именуются по схеме `shouldX_whenY`.
+
+- `shouldX` — что должен сделать метод.
+- `whenY` — при каком условии это происходит.
+
+Например: `shouldCalculateAverageProgressWhenMenteesHaveDifferentProgress`.
 
 ### Структура глоссария
 
