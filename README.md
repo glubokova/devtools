@@ -31,9 +31,6 @@ Pull Request обязателен для слияния в master
 
 # DVT-13:  Пишем тесты: AssertJ и сильные ассерты
 
-
-# DVT-12: Личный глоссарий терминов Dev Tools
-
 ## Как называются тесты в этом проекте
 
 Тесты именуются по схеме `shouldX_whenY`.
@@ -42,6 +39,8 @@ Pull Request обязателен для слияния в master
 - `whenY` — при каком условии это происходит.
 
 Например: `shouldCalculateAverageProgressWhenMenteesHaveDifferentProgress`.
+
+# DVT-12: Личный глоссарий терминов Dev Tools
 
 ### Структура глоссария
 
