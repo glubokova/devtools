@@ -24,6 +24,21 @@ public class ProgressTracker {
         );
     }
 
+    public double averageProgressPercent(Mentee[] mentees) {
+        if(mentees == null || mentees.length == 0) {
+            throw new IllegalArgumentException("Пустой список mentee");
+        }
+
+        double totalPercent = 0;
+
+        for(Mentee mentee : mentees) {
+            double percent = mentee.completedLessons() * 100.0 / mentee.totalLessons();
+            totalPercent += percent;
+        }
+
+        return totalPercent / mentees.length;
+    }
+
     public static void main(String[] args) {
         ProgressTracker tracker = new ProgressTracker();
 
@@ -36,4 +51,6 @@ public class ProgressTracker {
         String progress = tracker.calculateTotalProgress(mentees);
         System.out.println(progress);
     }
+
+
 }
